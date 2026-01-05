@@ -1,22 +1,17 @@
+from stats import get_num_words,  get_num_char
+
 def get_book_text(file_path):
     with open(file_path) as f:
         file_contents = f.read()
         return file_contents
     
-def word_count(file_text):
-    word_count = 0
-    file_words = file_text.split()
-    
-    for word in file_words:
-        word_count += 1
-        
-    return word_count
-    
 def main():
     frankenstein_rel_path = "books/frankenstein.txt"
     
-    num_words = word_count(get_book_text(frankenstein_rel_path))    
+    book_text = get_book_text(frankenstein_rel_path)
+    num_words = get_num_words(book_text)    
+    num_char = get_num_char(book_text)
     
-    print(f"Found {num_words} total words")
+    print(f"Found {num_words} total words. \n {num_char}")
 
 main()
