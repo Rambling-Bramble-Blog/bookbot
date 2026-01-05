@@ -17,3 +17,20 @@ def get_num_char(file_text):
             char_count_dict[char] = 1
         
     return char_count_dict
+
+def sort_on(dictionary):
+    return dictionary["num"]
+
+def sort_char_dict(char_count_dict):
+    # char_dict = {}
+    # count_dict ={}
+    sorted_list = []
+    
+    for char in char_count_dict:
+        sorted_list.append({"char": char, "num": char_count_dict[char]})
+    
+    sorted_list.sort(reverse=True, key=sort_on)
+    
+    # print(char_dict_list)
+    
+    return sorted_list
